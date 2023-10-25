@@ -8,5 +8,8 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface MessageMapper {
     Message eventToDTO(MessageEvent event);
+
     MessageEvent requestToEvent(MessageRequest message);
+
+
 }

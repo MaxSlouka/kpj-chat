@@ -1,5 +1,6 @@
 package cz.inventi.kpj.chat.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,15 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 public class MessageEvent {
+
+
+    public MessageEvent(String name, String message){
+        this.id = UUID.randomUUID();
+        this.type = MessageType.MESSAGE;
+        this.created = OffsetDateTime.now();
+        this.name = name;
+        this.message = message;
+    }
 
     /**
      * Id of the message; this is a unique identifier of the message.
